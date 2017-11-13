@@ -1,8 +1,7 @@
 library(e1071)
-# library(lattice)
 
 
-#### Radial Kernel ####
+#### helpers ####
 
 tuneRadial <- function(c, g) {
     return(
@@ -36,7 +35,7 @@ plotTuneRadial <- function(obj, n) {
 }
 
 
-### Outputs
+#### Outputs ####
 
 ## Plots
 for (i in seq(12)) {
@@ -69,7 +68,7 @@ for (i in seq(100)) {
 }
 
 
-#### Search for best parameters
+#### Search for best parameters ####
 # COST <- 2^seq(-5, 18, by = 1)
 # GAMMA <- 2^seq(-15, 3, by = 1)
 # tuneRadial.0 <- tuneRadial(COST, GAMMA)

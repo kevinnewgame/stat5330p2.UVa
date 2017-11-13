@@ -15,3 +15,16 @@ contourplot(error ~ log(cost, 2) * log(gamma, 2),
             cuts = CUTS,
             region = TRUE,
             labels = FALSE)
+
+tuneLinear <- list()
+for (i in 3:5) {
+    tuneLinear[[i]] <- get(paste("tuneLinear.", i, sep = ""))
+}
+save(tuneLinear, file = "tuneLinear.Rdata")
+
+identical(tuneLinear[[1]], tuneLinear.0)
+
+rm(list=ls(pattern="tuneLinear."))
+
+rm("best.linear", "best.radial", "bi", "fn", "i", "tmp")
+save(tuneRadial, file = "tuneRadial.Rdata")
